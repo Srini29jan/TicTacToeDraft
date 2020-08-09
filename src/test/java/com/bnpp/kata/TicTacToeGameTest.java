@@ -8,6 +8,7 @@ import org.junit.Test;
 public class TicTacToeGameTest {
 
 	private static final int ZERO = 0;
+	private static final int ONE = 1;
 	private static final char CHAR_NULL = '\0';
 
 	protected TicTacToeGame ticTacToeGame;
@@ -29,6 +30,6 @@ public class TicTacToeGameTest {
 
 	@Test
 	public void checkIfTicTacToeGameBoardPositionZeroOneIsInitializedToNullCharacter() {
-		assertEquals(CHAR_NULL, ticTacToeGame.ticTacToeGameBoard[ZERO][1]);
+		assertEquals(CHAR_NULL, ticTacToeGame.ticTacToeGameBoard[ZERO][ONE]);
 	}
 }
