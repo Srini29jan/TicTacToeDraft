@@ -9,6 +9,7 @@ public class TicTacToeGameTest {
 
 	private static final int ZERO = 0;
 	private static final char CHAR_NULL = '\0';
+
 	protected TicTacToeGame ticTacToeGame;
 
 	@Before
@@ -24,5 +25,10 @@ public class TicTacToeGameTest {
 	@Test
 	public void checkIfTicTacToeGameBoardPositionZeroZeroIsInitializedToNullCharacter() {
 		assertEquals(CHAR_NULL, ticTacToeGame.ticTacToeGameBoard[ZERO][ZERO]);
+	}
+
+	@Test
+	public void checkIfTicTacToeGameBoardPositionZeroOneIsInitializedToNullCharacter() {
+		assertEquals(CHAR_NULL, ticTacToeGame.ticTacToeGameBoard[ZERO][1]);
 	}
 }
