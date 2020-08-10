@@ -2,6 +2,8 @@ package com.bnpp.kata;
 
 public class GameBoard {
 
+	private static final char NO_WIN = 'N';
+	private static final int NINE = 9;
 	private static final int ONE = 1;
 	private static final char PLAYER_O = 'O';
 	private static final char PLAYER_X = 'X';
@@ -65,8 +67,8 @@ public class GameBoard {
 		if (winner == CHAR_NULL) {
 			winner = getWinnerByStrikeInDiagonal();
 		}
-		if (winner == CHAR_NULL && numberOfCellsFilled == 9) {
-			winner = 'N';
+		if (winner == CHAR_NULL && numberOfCellsFilled == NINE) {
+			winner = NO_WIN;
 		}
 		return winner;
 	}
