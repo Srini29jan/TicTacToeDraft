@@ -25,11 +25,11 @@ public class TicTacToeGameTest {
 
 	@Test
 	public void checkIfTicTacToeGameBoardPositionZeroZeroIsInitializedToNullCharacter() {
-		assertEquals(CHAR_NULL, ticTacToeGame.ticTacToeGameBoard[ZERO][ZERO]);
+		assertEquals(CHAR_NULL, ticTacToeGame.getGameBoard().ticTacToeGameBoard[ZERO][ZERO]);
 	}
 
 	@Test
 	public void checkIfTicTacToeGameBoardPositionZeroOneIsInitializedToNullCharacter() {
-		assertEquals(CHAR_NULL, ticTacToeGame.ticTacToeGameBoard[ZERO][ONE]);
+		assertEquals(CHAR_NULL, ticTacToeGame.getGameBoard().ticTacToeGameBoard[ZERO][ONE]);
 	}
 }

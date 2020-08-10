@@ -2,10 +2,14 @@ package com.bnpp.kata;
 
 public class TicTacToeGame {
 
-	private static final int THREE = 3;
-	protected char[][] ticTacToeGameBoard;
+	private GameBoard gameBoard;
 
 	public TicTacToeGame() {
-		ticTacToeGameBoard = new char[THREE][THREE];
+		gameBoard = new GameBoard();
 	}
+
+	public GameBoard getGameBoard() {
+		return gameBoard;
+	}
+
 }
