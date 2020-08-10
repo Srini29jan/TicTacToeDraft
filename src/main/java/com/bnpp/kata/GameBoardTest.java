@@ -67,4 +67,11 @@ public class GameBoardTest {
 		gameBoard.setInGameBoard(ZERO, ZERO, PLAYER_X);
 		assertEquals(1, gameBoard.numberOfCellsFilled);
 	}
+
+	@Test
+	public void checkIfNumberOfCellsFilledIsTwoForTwoValidMovesByAlternatePlayers() throws InvalidMoveException {
+		gameBoard.setInGameBoard(ZERO, ZERO, PLAYER_X);
+		gameBoard.setInGameBoard(ZERO, ONE, PLAYER_O);
+		assertEquals(2, gameBoard.numberOfCellsFilled);
+	}
 }
