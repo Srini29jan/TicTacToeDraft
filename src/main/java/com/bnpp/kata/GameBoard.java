@@ -2,6 +2,8 @@ package com.bnpp.kata;
 
 public class GameBoard {
 
+	private static final char PLAYER_O = 'O';
+	private static final char PLAYER_X = 'X';
 	private static final char CHAR_NULL = '\0';
 	private static final String OCCUPIED_POSITION_MESSAGE = "The position selected is already occupied. Please select an unoccupied position in the board";
 	private static final String INVALID_POSITION_MESSAGE = "The position selected is invalid. Please select a number from 0, 1 or 2";
@@ -43,9 +45,9 @@ public class GameBoard {
 
 	protected void setCurrentPlayer() {
 		if (numberOfCellsFilled % TWO == ZERO) {
-			this.currentPlayer = 'X';
+			this.currentPlayer = PLAYER_X;
 		} else {
-			this.currentPlayer = 'O';
+			this.currentPlayer = PLAYER_O;
 		}
 	}
 
