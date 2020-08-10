@@ -26,4 +26,10 @@ public class GameBoardTest {
 		gameBoard.setInGameBoard(ZERO, ZERO, PLAYER_X);
 		assertEquals(PLAYER_X, gameBoard.getFromGameBoard(ZERO, ZERO));
 	}
+
+	@Test
+	public void checkIfOIsMarkedAtPositionZeroOneIfPlayerOPlaysAtPositionZeroOne() {
+		gameBoard.setInGameBoard(ZERO, 1, 'O');
+		assertEquals('O', gameBoard.getFromGameBoard(ZERO, 1));
+	}
 }
