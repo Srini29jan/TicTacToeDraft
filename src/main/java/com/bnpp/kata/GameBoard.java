@@ -58,18 +58,31 @@ public class GameBoard {
 	}
 
 	public char checkForResultOfTheGame() {
+		char winner = getWinnerByStrikeInRow();
+		if (winner == CHAR_NULL) {
+			winner = getWinnerByStrikeInColumn();
+		}
+		return winner;
+	}
+
+	private char getWinnerByStrikeInColumn() {
+		if (getFromGameBoard(ZERO, ZERO) != CHAR_NULL && getFromGameBoard(ZERO, ZERO) == getFromGameBoard(ONE, ZERO) && getFromGameBoard(ONE, ZERO) == getFromGameBoard(TWO, ZERO)) {
+			return getFromGameBoard(ZERO, ZERO);
+		} else if (getFromGameBoard(ZERO, ONE) != CHAR_NULL && getFromGameBoard(ZERO, ONE) == getFromGameBoard(ONE, ONE) && getFromGameBoard(ONE, ONE) == getFromGameBoard(TWO, ONE)) {
+			return getFromGameBoard(ZERO, ONE);
+		} else if (getFromGameBoard(ZERO, TWO) != CHAR_NULL && getFromGameBoard(ZERO, TWO) == getFromGameBoard(ONE, TWO) && getFromGameBoard(ONE, TWO) == getFromGameBoard(TWO, TWO)) {
+			return getFromGameBoard(ZERO, TWO);
+		}
+		return CHAR_NULL;
+	}
+
+	private char getWinnerByStrikeInRow() {
 		if (getFromGameBoard(ZERO, ZERO) != CHAR_NULL && getFromGameBoard(ZERO, ZERO) == getFromGameBoard(ZERO, ONE) && getFromGameBoard(ZERO, ONE) == getFromGameBoard(ZERO, TWO)) {
 			return getFromGameBoard(ZERO, ZERO);
 		} else if (getFromGameBoard(ONE, ZERO) != CHAR_NULL && getFromGameBoard(ONE, ZERO) == getFromGameBoard(ONE, ONE) && getFromGameBoard(ONE, ONE) == getFromGameBoard(ONE, TWO)) {
 			return getFromGameBoard(ONE, ZERO);
 		} else if (getFromGameBoard(TWO, ZERO) != CHAR_NULL && getFromGameBoard(TWO, ZERO) == getFromGameBoard(TWO, ONE) && getFromGameBoard(TWO, ONE) == getFromGameBoard(TWO, TWO)) {
 			return getFromGameBoard(TWO, ZERO);
-		} else if (getFromGameBoard(ZERO, ZERO) != CHAR_NULL && getFromGameBoard(ZERO, ZERO) == getFromGameBoard(ONE, ZERO) && getFromGameBoard(ONE, ZERO) == getFromGameBoard(TWO, ZERO)) {
-			return getFromGameBoard(ZERO, ZERO);
-		} else if (getFromGameBoard(ZERO, ONE) != CHAR_NULL && getFromGameBoard(ZERO, ONE) == getFromGameBoard(ONE, ONE) && getFromGameBoard(ONE, ONE) == getFromGameBoard(TWO, ONE)) {
-			return getFromGameBoard(ZERO, ONE);
-		} else if (getFromGameBoard(ZERO, TWO) != CHAR_NULL && getFromGameBoard(ZERO, TWO) == getFromGameBoard(ONE, TWO) && getFromGameBoard(ONE, TWO) == getFromGameBoard(TWO, TWO)) {
-			return getFromGameBoard(ZERO, TWO);
 		}
 		return CHAR_NULL;
 	}
