@@ -7,6 +7,7 @@ import org.junit.Test;
 
 public class GameBoardTest {
 
+	private static final int TWO = 2;
 	private static final char PLAYER_O = 'O';
 	private static final char PLAYER_X = 'X';
 	private static final int ZERO = 0;
@@ -86,8 +87,8 @@ public class GameBoardTest {
 		gameBoard.setInGameBoard(ZERO, ZERO);
 		gameBoard.setInGameBoard(ONE, ZERO);
 		gameBoard.setInGameBoard(ZERO, ONE);
-		gameBoard.setInGameBoard(2, ZERO);
-		gameBoard.setInGameBoard(ZERO, 2);
+		gameBoard.setInGameBoard(TWO, ZERO);
+		gameBoard.setInGameBoard(ZERO, TWO);
 		assertEquals(PLAYER_X, gameBoard.checkForResultOfTheGame());
 	}
 }

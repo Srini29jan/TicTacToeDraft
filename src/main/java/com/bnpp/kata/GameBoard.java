@@ -2,6 +2,7 @@ package com.bnpp.kata;
 
 public class GameBoard {
 
+	private static final int ONE = 1;
 	private static final char PLAYER_O = 'O';
 	private static final char PLAYER_X = 'X';
 	private static final char CHAR_NULL = '\0';
@@ -57,7 +58,7 @@ public class GameBoard {
 	}
 
 	public char checkForResultOfTheGame() {
-		if (getFromGameBoard(ZERO, ZERO) != CHAR_NULL && getFromGameBoard(ZERO, ZERO) == getFromGameBoard(ZERO, 1) && getFromGameBoard(ZERO, 1) == getFromGameBoard(ZERO, TWO)) {
+		if (getFromGameBoard(ZERO, ZERO) != CHAR_NULL && getFromGameBoard(ZERO, ZERO) == getFromGameBoard(ZERO, ONE) && getFromGameBoard(ZERO, ONE) == getFromGameBoard(ZERO, TWO)) {
 			return getFromGameBoard(ZERO, ZERO);
 		}
 		return CHAR_NULL;
