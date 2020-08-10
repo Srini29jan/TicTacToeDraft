@@ -111,4 +111,15 @@ public class GameBoardTest {
 		gameBoard.setInGameBoard(TWO, TWO);
 		assertEquals(PLAYER_X, gameBoard.checkForResultOfTheGame());
 	}
+
+	@Test
+	public void checkIfWinnerIsOIfOFillsFirstColumn() throws InvalidMoveException {
+		gameBoard.setInGameBoard(ZERO, ONE);
+		gameBoard.setInGameBoard(ZERO, ZERO);
+		gameBoard.setInGameBoard(ZERO, TWO);
+		gameBoard.setInGameBoard(ONE, ZERO);
+		gameBoard.setInGameBoard(ONE, ONE);
+		gameBoard.setInGameBoard(TWO, ZERO);
+		assertEquals(PLAYER_O, gameBoard.checkForResultOfTheGame());
+	}
 }
