@@ -52,4 +52,17 @@ public class TicTacToeGameTest {
 		assertTrue(ticTacToeGame.isGameOver());
 	}
 
+	@Test
+	public void checkIfTheGameEndedByNeitherOfThePlayersWinning() {
+		ticTacToeGame.drawOnBoard(ZERO, ONE);
+		ticTacToeGame.drawOnBoard(ZERO, TWO);
+		ticTacToeGame.drawOnBoard(ONE, ZERO);
+		ticTacToeGame.drawOnBoard(TWO, ONE);
+		ticTacToeGame.drawOnBoard(ONE, ONE);
+		ticTacToeGame.drawOnBoard(ONE, TWO);
+		ticTacToeGame.drawOnBoard(TWO, TWO);
+		ticTacToeGame.drawOnBoard(ZERO, ZERO);
+		ticTacToeGame.drawOnBoard(TWO, ZERO);
+		assertTrue(ticTacToeGame.isGameOver());
+	}
 }

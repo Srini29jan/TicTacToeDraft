@@ -11,6 +11,7 @@ public class TicTacToeGame {
 	private GameBoard gameBoard;
 	private final Logger LOGGER = Logger.getLogger(TicTacToeGame.class);
 	private char winner = '\0';
+	private static final char NO_WIN = 'N';
 
 	public TicTacToeGame() {
 		gameBoard = new GameBoard();
@@ -31,8 +32,11 @@ public class TicTacToeGame {
 	public boolean isGameOver() {
 		if (gameBoard.numberOfCellsFilled > FOUR) {
 			winner = gameBoard.checkForResultOfTheGame();
-			if (winner != CHAR_NULL) {
+			if (winner != NO_WIN) {
 				LOGGER.info(WINNER_MESSAGE+ winner);
+				return true;
+			} else if (gameBoard.numberOfCellsFilled == 9) {
+				LOGGER.info("The game ended without a winner");
 				return true;
 			}
 		}
