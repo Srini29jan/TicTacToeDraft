@@ -2,6 +2,8 @@ package com.bnpp.kata;
 
 public class GameBoard {
 
+	private static final char CHAR_NULL = '\0';
+	private static final String OCCUPIED_POSITION_MESSAGE = "The position selected is already occupied. Please select an unoccupied position in the board";
 	private static final String INVALID_POSITION_MESSAGE = "The position selected is invalid. Please select a number from 0, 1 or 2";
 	private static final int ZERO = 0;
 	private static final int TWO = 2;
@@ -14,10 +16,10 @@ public class GameBoard {
 
 	public void setInGameBoard(int row, int column, char player) throws InvalidMoveException {
 		if (isWithinRange(row, column)) {
-			if(getFromGameBoard(row, column) == '\0') {
+			if(getFromGameBoard(row, column) == CHAR_NULL) {
 				ticTacToeGameBoard[row][column] = player;
 			} else {
-				throw new InvalidMoveException("The position selected is already occupied. Please select an unoccupied position in the board");
+				throw new InvalidMoveException(OCCUPIED_POSITION_MESSAGE);
 			}
 		} else {
 			throw new InvalidMoveException(INVALID_POSITION_MESSAGE);
