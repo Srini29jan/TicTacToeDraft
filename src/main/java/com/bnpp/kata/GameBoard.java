@@ -13,11 +13,15 @@ public class GameBoard {
 	}
 
 	public void setInGameBoard(int row, int column, char player) throws InvalidMoveException {
-		if (row >= ZERO && row <= TWO && column >= ZERO && column <= TWO) {
+		if (isWithinRange(row, column)) {
 			ticTacToeGameBoard[row][column] = player;
 		} else {
 			throw new InvalidMoveException(INVALID_POSITION_MESSAGE);
 		}
+	}
+
+	private boolean isWithinRange(int row, int column) {
+		return row >= ZERO && row <= TWO && column >= ZERO && column <= TWO;
 	}
 
 	public char getFromGameBoard(int row, int column) {
