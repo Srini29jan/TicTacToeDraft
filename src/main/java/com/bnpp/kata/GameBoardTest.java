@@ -101,4 +101,14 @@ public class GameBoardTest {
 		gameBoard.setInGameBoard(ONE, TWO);
 		assertEquals(PLAYER_X, gameBoard.checkForResultOfTheGame());
 	}
+
+	@Test
+	public void checkIfWinnerIsXIfXFillsThirdRow() throws InvalidMoveException {
+		gameBoard.setInGameBoard(TWO, ZERO);
+		gameBoard.setInGameBoard(ZERO, ZERO);
+		gameBoard.setInGameBoard(TWO, ONE);
+		gameBoard.setInGameBoard(ONE, ZERO);
+		gameBoard.setInGameBoard(TWO, TWO);
+		assertEquals(PLAYER_X, gameBoard.checkForResultOfTheGame());
+	}
 }
