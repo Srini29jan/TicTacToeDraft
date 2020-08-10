@@ -55,4 +55,11 @@ public class GameBoard {
 		setCurrentPlayer();
 		setInGameBoard(row, column, currentPlayer);
 	}
+
+	public char checkForResultOfTheGame() {
+		if (getFromGameBoard(ZERO, ZERO) != CHAR_NULL && getFromGameBoard(ZERO, ZERO) == getFromGameBoard(ZERO, 1) && getFromGameBoard(ZERO, 1) == getFromGameBoard(ZERO, TWO)) {
+			return getFromGameBoard(ZERO, ZERO);
+		}
+		return CHAR_NULL;
+	}
 }

@@ -80,4 +80,14 @@ public class GameBoardTest {
 		gameBoard.setInGameBoard(ZERO, ZERO);
 		assertEquals(PLAYER_X, gameBoard.currentPlayer);
 	}
+
+	@Test
+	public void checkIfWinnerIsXIfXFillsFirstRow() throws InvalidMoveException {
+		gameBoard.setInGameBoard(ZERO, ZERO);
+		gameBoard.setInGameBoard(ONE, ZERO);
+		gameBoard.setInGameBoard(ZERO, ONE);
+		gameBoard.setInGameBoard(2, ZERO);
+		gameBoard.setInGameBoard(ZERO, 2);
+		assertEquals(PLAYER_X, gameBoard.checkForResultOfTheGame());
+	}
 }
