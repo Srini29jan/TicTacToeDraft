@@ -62,12 +62,19 @@ public class GameBoard {
 		if (winner == CHAR_NULL) {
 			winner = getWinnerByStrikeInColumn();
 		}
-		if (winner == CHAR_NULL && getFromGameBoard(ZERO, ZERO) != CHAR_NULL && getFromGameBoard(ZERO, ZERO) == getFromGameBoard(ONE, ONE) && getFromGameBoard(ONE, ONE) == getFromGameBoard(TWO, TWO)) {
-			winner = getFromGameBoard(ZERO, ZERO);
-		} else if (getFromGameBoard(ZERO, TWO) != CHAR_NULL && getFromGameBoard(ZERO, TWO) == getFromGameBoard(ONE, ONE) && getFromGameBoard(ONE, ONE) == getFromGameBoard(TWO, ZERO)) {
-			winner = getFromGameBoard(ZERO, TWO);
+		if (winner == CHAR_NULL) {
+			winner = getWinnerByStrikeInDiagonal();
 		}
 		return winner;
+	}
+
+	private char getWinnerByStrikeInDiagonal() {
+		if (getFromGameBoard(ZERO, ZERO) != CHAR_NULL && getFromGameBoard(ZERO, ZERO) == getFromGameBoard(ONE, ONE) && getFromGameBoard(ONE, ONE) == getFromGameBoard(TWO, TWO)) {
+			return getFromGameBoard(ZERO, ZERO);
+		} else if (getFromGameBoard(ZERO, TWO) != CHAR_NULL && getFromGameBoard(ZERO, TWO) == getFromGameBoard(ONE, ONE) && getFromGameBoard(ONE, ONE) == getFromGameBoard(TWO, ZERO)) {
+			return getFromGameBoard(ZERO, TWO);
+		}
+		return CHAR_NULL;
 	}
 
 	private char getWinnerByStrikeInColumn() {
