@@ -7,8 +7,10 @@ import org.junit.Test;
 
 public class GameBoardTest {
 
+	private static final char PLAYER_O = 'O';
 	private static final char PLAYER_X = 'X';
 	private static final int ZERO = 0;
+	private static final int ONE = 1;
 	protected GameBoard gameBoard;
 
 	@Before
@@ -29,7 +31,7 @@ public class GameBoardTest {
 
 	@Test
 	public void checkIfOIsMarkedAtPositionZeroOneIfPlayerOPlaysAtPositionZeroOne() {
-		gameBoard.setInGameBoard(ZERO, 1, 'O');
-		assertEquals('O', gameBoard.getFromGameBoard(ZERO, 1));
+		gameBoard.setInGameBoard(ZERO, ONE, PLAYER_O);
+		assertEquals(PLAYER_O, gameBoard.getFromGameBoard(ZERO, ONE));
 	}
 }
