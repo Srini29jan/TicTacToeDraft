@@ -74,4 +74,10 @@ public class GameBoardTest {
 		gameBoard.setInGameBoard(ZERO, ONE, PLAYER_O);
 		assertEquals(2, gameBoard.numberOfCellsFilled);
 	}
+
+	@Test
+	public void checkIfCurrentPlayerIsXForFirstMove() throws InvalidMoveException {
+		gameBoard.setInGameBoard(ZERO, ZERO);
+		assertEquals(PLAYER_X, gameBoard.currentPlayer);
+	}
 }

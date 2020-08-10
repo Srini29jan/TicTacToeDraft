@@ -10,6 +10,7 @@ public class GameBoard {
 	private static final int THREE = 3;
 	protected char[][] ticTacToeGameBoard;
 	protected int numberOfCellsFilled;
+	protected char currentPlayer;
 
 	public GameBoard() {
 		ticTacToeGameBoard = new char[THREE][THREE];
@@ -38,5 +39,18 @@ public class GameBoard {
 
 	public char getFromGameBoard(int row, int column) {
 		return ticTacToeGameBoard[row][column];
+	}
+
+	protected void setCurrentPlayer() {
+		if (numberOfCellsFilled % TWO == ZERO) {
+			this.currentPlayer = 'X';
+		} else {
+			this.currentPlayer = 'O';
+		}
+	}
+
+	public void setInGameBoard(int row, int column) throws InvalidMoveException {
+		setCurrentPlayer();
+		setInGameBoard(row, column, currentPlayer);
 	}
 }
