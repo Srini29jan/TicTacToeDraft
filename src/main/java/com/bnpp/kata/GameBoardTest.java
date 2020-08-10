@@ -154,4 +154,15 @@ public class GameBoardTest {
 		gameBoard.setInGameBoard(TWO, TWO);
 		assertEquals(PLAYER_X, gameBoard.checkForResultOfTheGame());
 	}
+
+	@Test
+	public void checkIfWinnerIsOIfOFillsRightTopToLeftBottomDiagonal() throws InvalidMoveException {
+		gameBoard.setInGameBoard(ZERO, ZERO);
+		gameBoard.setInGameBoard(ZERO, TWO);
+		gameBoard.setInGameBoard(ONE, TWO);
+		gameBoard.setInGameBoard(ONE, ONE);
+		gameBoard.setInGameBoard(TWO, TWO);
+		gameBoard.setInGameBoard(TWO, ZERO);
+		assertEquals(PLAYER_O, gameBoard.checkForResultOfTheGame());
+	}
 }
