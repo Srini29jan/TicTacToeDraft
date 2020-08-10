@@ -43,6 +43,6 @@ public class GameBoardTest {
 
 	@Test(expected = InvalidMoveException.class)
 	public void checkIfExceptionIsThrownIfInputRowIsLessThanZero() throws InvalidMoveException {
-		gameBoard.setInGameBoard(-1, ZERO, PLAYER_X);
+		gameBoard.setInGameBoard(-ONE, ZERO, PLAYER_X);
 	}
 }
