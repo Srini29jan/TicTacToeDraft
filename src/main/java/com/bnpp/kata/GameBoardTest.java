@@ -19,4 +19,9 @@ public class GameBoardTest {
 		assertNotNull(gameBoard);
 	}
 
+	@Test
+	public void checkIfXIsMarkedAtPositionZeroZeroIfPlayerXPlaysAtPositionZeroZero() {
+		gameBoard.setInGameBoard(0, 0, 'X');
+		assertEquals('X', gameBoard.getFromGameBoard(0, 0));
+	}
 }
