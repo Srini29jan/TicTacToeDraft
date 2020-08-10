@@ -56,4 +56,9 @@ public class GameBoardTest {
 		gameBoard.setInGameBoard(ZERO, -ONE, PLAYER_X);
 	}
 
+	@Test(expected = InvalidMoveException.class)
+	public void checkIfExceptionIsThrownIfAPositionIsPlayedTwice() throws InvalidMoveException {
+		gameBoard.setInGameBoard(ZERO, ZERO, PLAYER_X);
+		gameBoard.setInGameBoard(ZERO, ZERO, PLAYER_X);
+	}
 }

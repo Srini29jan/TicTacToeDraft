@@ -14,7 +14,11 @@ public class GameBoard {
 
 	public void setInGameBoard(int row, int column, char player) throws InvalidMoveException {
 		if (isWithinRange(row, column)) {
-			ticTacToeGameBoard[row][column] = player;
+			if(getFromGameBoard(row, column) == '\0') {
+				ticTacToeGameBoard[row][column] = player;
+			} else {
+				throw new InvalidMoveException("The position selected is already occupied. Please select an unoccupied position in the board");
+			}
 		} else {
 			throw new InvalidMoveException(INVALID_POSITION_MESSAGE);
 		}
