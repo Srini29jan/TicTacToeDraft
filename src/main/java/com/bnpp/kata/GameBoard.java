@@ -9,6 +9,7 @@ public class GameBoard {
 	private static final int TWO = 2;
 	private static final int THREE = 3;
 	protected char[][] ticTacToeGameBoard;
+	protected int numberOfCellsFilled;
 
 	public GameBoard() {
 		ticTacToeGameBoard = new char[THREE][THREE];
@@ -18,6 +19,7 @@ public class GameBoard {
 		if (isWithinRange(row, column)) {
 			if(isPositionNotAlreadyPlayed(row, column)) {
 				ticTacToeGameBoard[row][column] = player;
+				numberOfCellsFilled++;
 			} else {
 				throw new InvalidMoveException(OCCUPIED_POSITION_MESSAGE);
 			}
