@@ -16,7 +16,7 @@ public class GameBoard {
 
 	public void setInGameBoard(int row, int column, char player) throws InvalidMoveException {
 		if (isWithinRange(row, column)) {
-			if(getFromGameBoard(row, column) == CHAR_NULL) {
+			if(isPositionNotAlreadyPlayed(row, column)) {
 				ticTacToeGameBoard[row][column] = player;
 			} else {
 				throw new InvalidMoveException(OCCUPIED_POSITION_MESSAGE);
@@ -24,6 +24,10 @@ public class GameBoard {
 		} else {
 			throw new InvalidMoveException(INVALID_POSITION_MESSAGE);
 		}
+	}
+
+	private boolean isPositionNotAlreadyPlayed(int row, int column) {
+		return getFromGameBoard(row, column) == CHAR_NULL;
 	}
 
 	private boolean isWithinRange(int row, int column) {
