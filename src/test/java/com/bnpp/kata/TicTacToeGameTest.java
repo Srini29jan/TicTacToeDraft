@@ -40,4 +40,15 @@ public class TicTacToeGameTest {
 		ticTacToeGame.drawOnBoard(ZERO, ONE);
 		assertEquals('O', ticTacToeGame.getGameBoard().currentPlayer);
 	}
+
+	@Test
+	public void checkIfTheGameEndedByAPlayerWinning() {
+		ticTacToeGame.drawOnBoard(ONE, ZERO);
+		ticTacToeGame.drawOnBoard(ZERO, ZERO);
+		ticTacToeGame.drawOnBoard(ONE, ONE);
+		ticTacToeGame.drawOnBoard(2, ZERO);
+		ticTacToeGame.drawOnBoard(ONE, 2);
+		assertTrue(ticTacToeGame.isGameOver());
+	}
+
 }
