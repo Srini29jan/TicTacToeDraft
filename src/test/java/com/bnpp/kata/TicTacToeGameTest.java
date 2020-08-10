@@ -7,6 +7,7 @@ import org.junit.Test;
 
 public class TicTacToeGameTest {
 
+	private static final int TWO = 2;
 	private static final int ZERO = 0;
 	private static final int ONE = 1;
 	private static final char CHAR_NULL = '\0';
@@ -46,8 +47,8 @@ public class TicTacToeGameTest {
 		ticTacToeGame.drawOnBoard(ONE, ZERO);
 		ticTacToeGame.drawOnBoard(ZERO, ZERO);
 		ticTacToeGame.drawOnBoard(ONE, ONE);
-		ticTacToeGame.drawOnBoard(2, ZERO);
-		ticTacToeGame.drawOnBoard(ONE, 2);
+		ticTacToeGame.drawOnBoard(TWO, ZERO);
+		ticTacToeGame.drawOnBoard(ONE, TWO);
 		assertTrue(ticTacToeGame.isGameOver());
 	}
 
