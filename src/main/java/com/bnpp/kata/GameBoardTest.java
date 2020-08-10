@@ -40,4 +40,9 @@ public class GameBoardTest {
 	public void checkIfExceptionIsThrownIfInputRowIsBeyondTwo() throws InvalidMoveException {
 		gameBoard.setInGameBoard(THREE, ZERO, PLAYER_X);
 	}
+
+	@Test(expected = InvalidMoveException.class)
+	public void checkIfExceptionIsThrownIfInputRowIsLessThanZero() throws InvalidMoveException {
+		gameBoard.setInGameBoard(-1, ZERO, PLAYER_X);
+	}
 }

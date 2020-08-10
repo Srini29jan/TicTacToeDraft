@@ -12,7 +12,7 @@ public class GameBoard {
 	}
 
 	public void setInGameBoard(int row, int column, char player) throws InvalidMoveException {
-		if (row <= TWO) {
+		if (row >= 0 && row <= TWO) {
 			ticTacToeGameBoard[row][column] = player;
 		} else {
 			throw new InvalidMoveException(INVALID_POSITION_MESSAGE);
