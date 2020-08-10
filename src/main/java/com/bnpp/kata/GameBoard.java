@@ -9,8 +9,12 @@ public class GameBoard {
 		ticTacToeGameBoard = new char[THREE][THREE];
 	}
 
-	public void setInGameBoard(int row, int column, char player) {
-		ticTacToeGameBoard[row][column] = player;
+	public void setInGameBoard(int row, int column, char player) throws InvalidMoveException {
+		if (row <= 2) {
+			ticTacToeGameBoard[row][column] = player;
+		} else {
+			throw new InvalidMoveException("The position selected is invalid. Please select a number from 0, 1 or 2");
+		}
 	}
 
 	public char getFromGameBoard(int row, int column) {

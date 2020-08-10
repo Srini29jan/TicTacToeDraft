@@ -24,14 +24,19 @@ public class GameBoardTest {
 	}
 
 	@Test
-	public void checkIfXIsMarkedAtPositionZeroZeroIfPlayerXPlaysAtPositionZeroZero() {
+	public void checkIfXIsMarkedAtPositionZeroZeroIfPlayerXPlaysAtPositionZeroZero() throws InvalidMoveException {
 		gameBoard.setInGameBoard(ZERO, ZERO, PLAYER_X);
 		assertEquals(PLAYER_X, gameBoard.getFromGameBoard(ZERO, ZERO));
 	}
 
 	@Test
-	public void checkIfOIsMarkedAtPositionZeroOneIfPlayerOPlaysAtPositionZeroOne() {
+	public void checkIfOIsMarkedAtPositionZeroOneIfPlayerOPlaysAtPositionZeroOne() throws InvalidMoveException {
 		gameBoard.setInGameBoard(ZERO, ONE, PLAYER_O);
 		assertEquals(PLAYER_O, gameBoard.getFromGameBoard(ZERO, ONE));
+	}
+
+	@Test(expected = InvalidMoveException.class)
+	public void checkIfExceptionIsThrownIfInputRowIsBeyondTwo() throws InvalidMoveException {
+		gameBoard.setInGameBoard(3, ZERO, PLAYER_X);
 	}
 }
