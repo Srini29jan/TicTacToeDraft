@@ -60,6 +60,8 @@ public class GameBoard {
 	public char checkForResultOfTheGame() {
 		if (getFromGameBoard(ZERO, ZERO) != CHAR_NULL && getFromGameBoard(ZERO, ZERO) == getFromGameBoard(ZERO, ONE) && getFromGameBoard(ZERO, ONE) == getFromGameBoard(ZERO, TWO)) {
 			return getFromGameBoard(ZERO, ZERO);
+		} else if (getFromGameBoard(ONE, ZERO) != CHAR_NULL && getFromGameBoard(ONE, ZERO) == getFromGameBoard(ONE, ONE) && getFromGameBoard(ONE, ONE) == getFromGameBoard(ONE, TWO)) {
+			return getFromGameBoard(ONE, ZERO);
 		}
 		return CHAR_NULL;
 	}
