@@ -62,6 +62,9 @@ public class GameBoard {
 		if (winner == CHAR_NULL) {
 			winner = getWinnerByStrikeInColumn();
 		}
+		if (winner == CHAR_NULL && getFromGameBoard(ZERO, ZERO) != CHAR_NULL && getFromGameBoard(ZERO, ZERO) == getFromGameBoard(ONE, ONE) && getFromGameBoard(ONE, ONE) == getFromGameBoard(TWO, TWO)) {
+			winner = getFromGameBoard(ZERO, ZERO);
+		}
 		return winner;
 	}
 
