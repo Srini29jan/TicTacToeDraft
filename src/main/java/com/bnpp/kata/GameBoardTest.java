@@ -11,6 +11,7 @@ public class GameBoardTest {
 	private static final char PLAYER_X = 'X';
 	private static final int ZERO = 0;
 	private static final int ONE = 1;
+	private static final int THREE = 3;
 	protected GameBoard gameBoard;
 
 	@Before
@@ -37,6 +38,6 @@ public class GameBoardTest {
 
 	@Test(expected = InvalidMoveException.class)
 	public void checkIfExceptionIsThrownIfInputRowIsBeyondTwo() throws InvalidMoveException {
-		gameBoard.setInGameBoard(3, ZERO, PLAYER_X);
+		gameBoard.setInGameBoard(THREE, ZERO, PLAYER_X);
 	}
 }
