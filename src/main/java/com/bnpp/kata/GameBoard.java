@@ -65,6 +65,9 @@ public class GameBoard {
 		if (winner == CHAR_NULL) {
 			winner = getWinnerByStrikeInDiagonal();
 		}
+		if (winner == CHAR_NULL && numberOfCellsFilled == 9) {
+			winner = 'N';
+		}
 		return winner;
 	}
 

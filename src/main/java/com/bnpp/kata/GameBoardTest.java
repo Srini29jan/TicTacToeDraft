@@ -165,4 +165,18 @@ public class GameBoardTest {
 		gameBoard.setInGameBoard(TWO, ZERO);
 		assertEquals(PLAYER_O, gameBoard.checkForResultOfTheGame());
 	}
+
+	@Test
+	public void checkIfNIsReturnedIfNeitherPlayerHasStrikeInRowColumnAndDiagonalAndNineCellsAreFilled() throws InvalidMoveException {
+		gameBoard.setInGameBoard(ZERO, ONE);
+		gameBoard.setInGameBoard(ZERO, TWO);
+		gameBoard.setInGameBoard(ONE, ZERO);
+		gameBoard.setInGameBoard(TWO, ONE);
+		gameBoard.setInGameBoard(ONE, ONE);
+		gameBoard.setInGameBoard(ONE, TWO);
+		gameBoard.setInGameBoard(TWO, TWO);
+		gameBoard.setInGameBoard(ZERO, ZERO);
+		gameBoard.setInGameBoard(TWO, ZERO);
+		assertEquals('N', gameBoard.checkForResultOfTheGame());
+	}
 }
