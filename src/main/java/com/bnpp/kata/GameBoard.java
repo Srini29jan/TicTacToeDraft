@@ -66,6 +66,8 @@ public class GameBoard {
 			return getFromGameBoard(TWO, ZERO);
 		} else if (getFromGameBoard(ZERO, ZERO) != CHAR_NULL && getFromGameBoard(ZERO, ZERO) == getFromGameBoard(ONE, ZERO) && getFromGameBoard(ONE, ZERO) == getFromGameBoard(TWO, ZERO)) {
 			return getFromGameBoard(ZERO, ZERO);
+		} else if (getFromGameBoard(ZERO, ONE) != CHAR_NULL && getFromGameBoard(ZERO, ONE) == getFromGameBoard(ONE, ONE) && getFromGameBoard(ONE, ONE) == getFromGameBoard(TWO, ONE)) {
+			return getFromGameBoard(ZERO, ONE);
 		}
 		return CHAR_NULL;
 	}
