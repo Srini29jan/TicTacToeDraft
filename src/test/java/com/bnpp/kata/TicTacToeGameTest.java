@@ -32,4 +32,12 @@ public class TicTacToeGameTest {
 	public void checkIfTicTacToeGameBoardPositionZeroOneIsInitializedToNullCharacter() {
 		assertEquals(CHAR_NULL, ticTacToeGame.getGameBoard().ticTacToeGameBoard[ZERO][ONE]);
 	}
+
+	@Test
+	public void checkIfThePlayersAreAlternatingOnPlaying() {
+		ticTacToeGame.drawOnBoard(ZERO, ZERO);
+		assertEquals('X', ticTacToeGame.getGameBoard().currentPlayer);
+		ticTacToeGame.drawOnBoard(ZERO, ONE);
+		assertEquals('O', ticTacToeGame.getGameBoard().currentPlayer);
+	}
 }
